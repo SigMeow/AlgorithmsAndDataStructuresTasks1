@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace task2
+{
+    class Program
+    {
+        static void Main()
+        {
+            int[] test = { 1, 4, 5, 4, 3, 5, 6, 6, 6, 6, 3, 1, 1, 6, 6};
+            int result = FindLucky(test);
+            Console.WriteLine(result);
+        }
+
+        public static int FindLucky(int[] arr)
+        {
+            Array.Sort(arr);
+
+            int maxLucky = -1;
+            int i = 0;
+
+            while (i < arr.Length)
+            {
+                int current = arr[i];
+                int count = 0;
+
+                while (i < arr.Length && arr[i] == current)
+                {
+                    count++;
+                    i++;
+                }
+
+                if (count == current)
+                {
+                    maxLucky = Math.Max(maxLucky, current);
+                }
+            }
+
+            return maxLucky;
+        }
+    }
+}
