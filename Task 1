@@ -1,0 +1,43 @@
+namespace ConsoleApp16
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.WriteLine(CanConstruct("aa", "aab"));
+            Console.WriteLine(CanConstruct("aa", "ab"));
+            Console.WriteLine(CanConstruct("hello", "ollh"));
+            Console.WriteLine(CanConstruct("hello", "hello"));
+        }
+
+        public static bool CanConstruct(string ransomNote, string magazine)
+        {
+            char[] r = ransomNote.ToCharArray();
+            char[] m = magazine.ToCharArray();
+            Array.Sort(r);
+            Array.Sort(m);
+
+            int i = 0;
+            int j = 0;
+
+            while (i < r.Length && j < m.Length)
+            {
+                if (r[i] == m[j])
+                {
+                    i++;
+                    j++;
+                }
+                else if (r[i] > m[j])
+                {
+                    j++;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+            return i == r.Length;
+        }
+    }
+}
