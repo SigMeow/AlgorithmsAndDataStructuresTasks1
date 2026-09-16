@@ -40,7 +40,7 @@ class Program
 
         string fake = "Неизвестный тур"; bool ok = false;
         foreach (var t in tours) if (t.Name == fake) ok = true;
-        Console.WriteLine($"\nНе найдено: FindManager(\"{fake}\") → {(ok ? "" : "null")}");
+        Console.WriteLine($"\nНе найдено: FindManager(\"{fake}\") => {(ok ? "" : "null")}");
 
         Console.ReadLine();
     }
