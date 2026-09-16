@@ -4,7 +4,7 @@ public class Country
 }
 public class Manager
 {
-    public int Id; public string FullName; public int Experience;
+    public int Id; public string FullName; public string Phone; public int Experience;
 }
 public class Tour
 {
